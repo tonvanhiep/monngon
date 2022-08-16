@@ -7,6 +7,10 @@
 
 @section('main')
     <main>
+        @php
+            $title_listproducts = 'Món ăn nổi bật';
+        @endphp
+
         <div class="home-slider">
             <div class="swiper home-swiper">
                 <div class="swiper-wrapper">
@@ -35,7 +39,7 @@
             </div>
         </div>
 
-        <div class="list-products-home">
+        {{-- <div class="list-products-home">
             <div class="container">
                 <div class="title-category">Danh sách sản phẩm</div>
                 <div class="list-products">
@@ -121,7 +125,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
+        @include('components.list_products')
 
         <div class="hr-line"></div>
 

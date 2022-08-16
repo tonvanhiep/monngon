@@ -1,3 +1,31 @@
+@extends('client.layout-client')
+
+@section('title')
+    Tìm kiếm: ""
+@endsection
+
+
+@section('main')
+    <main>
+        @php
+            $imgbanner = 'assets/images/banner-1.jpg';
+            $titlebanner = 'Từ khóa tìm kiếm:';
+            $subtitlebanner = 'Bún bò Huế';
+        
+            $title_listproducts = 'Kết quả tìm kiếm:';
+        @endphp
+        @include('components.banner')
+
+
+        @include('components.list_products')
+
+
+        @include('components.pagination')
+    </main>
+@endsection
+
+
+{{-- 
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -91,27 +119,7 @@
 
             </div>
 
-            <div class="pagination-section">
-                <div class="container">
-                    <ul class="pagination">
-                        <li class="page-item active">
-                            <a href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a href="#">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a href="#">5</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>          
+            @include('components.pagination')        
         </div>
     </main>
 
@@ -143,4 +151,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> --}}
