@@ -1,0 +1,213 @@
+@import url("../css/common.css");
+
+:root {
+  --main: #C59D5F;
+}
+
+body {
+  background: #e0e0e0;
+  font-family: 'Anek Latin', sans-serif;
+}
+.dashboard {
+  margin-top: 40px;
+}
+.btn-orange {
+  background-color: var(--main);
+  border: none;
+  color: white;
+}
+
+.btn-orange span {
+  color: white;
+}
+
+
+.div-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 90%;
+  justify-content: space-between;
+}
+.left-sidebar {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.left-sidebar li  {
+  margin-bottom: 10px;
+}
+
+
+.left-sidebar li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.left-sidebar ul {
+  list-style: none;
+  padding-left: 20px;
+  font-size: 14px;
+}
+.left-sidebar ul a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.left-sidebar ul a:before {
+  content: '- ';
+}
+
+.left-sidebar li a:hover,
+.left-sidebar li.active a {
+  color: var(--main);
+}
+
+.right-sidebar {
+  min-height: 100vh;
+  padding-left: 20px;
+  border-left: 1px solid var(--main);
+}
+
+.cke_contents {min-height: 400px !important;}
+
+.list-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-item .item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.list-item .item img {
+  max-width: 100%;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.list-item .item .name {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.list-item .item .price {
+  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 5px;
+  text-align: center;
+  color: var(--main);
+}
+
+.action {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  height: 70px;
+  background: linear-gradient(#999, transparent);
+  display: flex;
+  justify-content: flex-end;
+}
+.action a {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+  color: white;
+}
+.list-item-user {
+  display: table;
+  width: 100%;
+}
+.list-item-user .item-user {
+  display: table-row;
+}
+.list-item-user .item-user > * {
+  display: table-cell;
+  padding: 5px;
+  border-bottom: 1px solid #999;
+}
+
+.list-item-user .head-table {
+  font-weight: bold;
+}
+
+.list-item-user .item-user .action-user a {
+  margin-left: 10px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.options label {
+  font-weight: bold;
+}
+.options select {
+  outline: none;
+  border-radius: 5px;
+  height: 30px;
+  border-width: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.options input {
+  outline: none;
+  border-radius: 5px;
+  border-color: black;
+  height: 30px;
+  border-width: 1px;
+  padding-left: 10px;
+  width: 300px;
+}
+
+.options .btn-search {
+  border: none;
+  background: none;
+  position: relative;
+  right: 35px;
+  height: 30px;
+  top: 1px;
+  border-radius: 5px;
+}
+.options .btn-add {
+  height: 30px;
+  top: 1px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+/* thead {
+  border-style: solid;
+  border-color: black;
+  border-left: 1px;
+  border-right: 1px;
+  border-top: 1px;
+} */
+
+tr:hover {
+  cursor: pointer;
+}
+
+
+.info-cart h4 {
+  text-align: center;
+}
+
+.order-detail button {
+  margin-left: 20px;
+  height: 30px;
+  width: 60px;
+  background-color: white;
+  border-radius: 5px;
+}

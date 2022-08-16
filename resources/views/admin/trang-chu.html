@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Quicksand&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="../js/script.js"></script>
+    <link rel="icon" type="image/jpg" href="../images/logo/favicon.jpg">
+</head>
+<body>
+    <div class="container-fluid dashboard">
+        <div class="d-flex align-items-start">
+            <div class="col-md-2">
+                <ul class="left-sidebar">
+                    <li><a href="san-pham.html">Products</a>
+                        <ul>
+                            <li><a href="them-san-pham.html">Thêm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tin-tuc.html">Blogs</a>
+                        <ul>
+                            <li><a href="them-bai-viet.html">Thêm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="thanh-vien.html">Users</a>
+                        <ul>
+                            <li><a href="them-thanh-vien.html">Thêm</a></li>
+                        </ul>
+                    </li>
+                <!-- <li><a href="#">Slider</a></li> -->
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <div class="right-sidebar">
+
+
+  <h3 class="title-category mb-40">
+    Danh sách sản phẩm
+    <a class="btn btn-orange" href="add-product.php"><span class="icon-plus"></span></a>
+  </h3>
+
+  <div class="list-item row">
+    <div class="col-md-3">
+          <div class="item">
+            <div class="img">
+              <img src="'.$item['url_image'].'" alt="" />
+            </div>
+            <div class="name">'.$item['name'].'</div>
+            <div class="price">'.number_format($item['price']).' VNĐ</div>
+
+            <div class="action">
+              <a href="edit-product.php?id='.$item['id'].'"><span class="icon-pencil"></span></a>
+              <a href="products.php?idRemove='.$item['id'].'"><span class="icon-box-remove"></span></a>
+            </div>
+          </div>
+        </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+
+<script>
+CKEDITOR.replace('content');
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+.review {
+  position: relative;
+  background-image: url('../images/background-reivew.jpg');
+  color: white;
+  padding: 50px 0;
+}
+.review:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
+.review > * {
+  position: relative;
+  z-index: 2;
+}
+
+.review .title-review {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 44px;
+  z-index: 2;
+}
+.review .sub-title-review {
+  text-align: center;
+  font-size: 22px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.review .list-star {
+  padding-left: 0;
+  margin-bottom: 15px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.review .list-star li {
+  padding: 0 5px;
+}
+.review .list-star .icon-star-full {
+  color: var(--main);
+}
+.review .review-slider .content {
+  padding: 0 50px;
+  text-align: center;
+}
+.review .swiper-button-prev,
+.review .swiper-button-next {
+  color: white;
+  position: static;
+  margin: 0 5px 10px;
+}
+.review .swiper-button-prev:after {
+  content: '\ea40';
+  font-family: "icomoon";
+  font-size: 22px;
+}
+.review .swiper-button-next:after {
+  content: '\ea3c';
+  font-family: "icomoon";
+  font-size: 22px;
+}
+.review .review-slider .arrow-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.review .review-slider .name {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--main);
+  margin-top: 20px;
+  text-align: center;
+}

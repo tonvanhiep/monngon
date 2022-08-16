@@ -1,0 +1,21 @@
+.swiper {
+  max-width: 100%;
+}
+.home-slider img {
+  width: 100%;
+}
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  /* color: var(--main); */
+  color: white;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+.swiper-pagination .swiper-pagination-bullet {
+  background: white;
+  opacity: 1;
+}
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--main);
+}

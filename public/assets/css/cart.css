@@ -1,0 +1,11 @@
+thead tr th {
+    text-align: center;
+}
+
+.option-cart {
+    display: flex;
+    justify-content: space-between;
+}
+.option-cart a {
+    width: 200px;
+}

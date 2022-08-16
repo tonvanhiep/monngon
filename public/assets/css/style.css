@@ -1,0 +1,137 @@
+@import url("common.css");
+@import url("login.css");
+@import url("header.css");
+@import url("footer.css");
+@import url("products-blog.css");
+@import url("list-blog-2.css");
+@import url("slider.css");
+@import url("review.css");
+@import url("banner.css");
+@import url("pagination.css");
+@import url("cart.css");
+
+:root {
+    --main: #C59D5F;
+}
+body {
+    background-color: #e0e0e0;
+    /* font-family: "Open Sans"; */
+    font-family: 'Anek Latin', sans-serif;
+
+}
+.min-height {
+    min-height: 100vh;
+}
+.bg-white {
+    background-color: white;
+}
+
+/* Intro Home */
+.title-about {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--main);
+}
+.intro-home-inner {
+    font-family: 'Anek Latin', sans-serif;
+    font-size: 24px;
+    margin: 0 auto 100px;
+}
+
+/* List product */
+.title-category {
+    position: relative;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 4px 0 6px 20px;
+    line-height: 1;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.title-category:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 5px;
+    height: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--main);
+}
+
+.title-detail {
+    font-size: 28px;
+    text-align: center;
+}
+
+.detail-wrapper h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.detail-wrapper h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--main);
+}
+.detail-wrapper h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.detail-wrapper img {
+    display: block;
+    margin: 0 auto;
+}
+.detail-wrapper .price {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.comment-form {
+    margin-top: 40px;
+    padding: 20px 20px 20px 20px;
+    background: white;
+}
+.comment-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.list-comment {
+    margin: 20px 0;
+}
+.list-comment .name {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.list-comment .item-comment {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+}
+.list-comment .content {
+    position: relative;
+    padding: 0 20px;
+    line-height: 1.4;
+}
+.list-comment .content:before {
+    position: absolute;
+    content: '“';
+    top: -8px;
+    left: 0;
+    font-size: 30px;
+    font-family: 'Anek Latin', sans-serif;
+}
+.list-comment .content:after {
+    position: absolute;
+    bottom: -12px;
+    content: '”';
+    font-size: 30px;
+    font-family: 'Anek Latin', sans-serif;
+}
