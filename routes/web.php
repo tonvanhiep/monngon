@@ -30,49 +30,49 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::prefix('quanly')->group(function () {
-    Route::prefix('tongquan')->group(function () {
-        Route::get('/', [TongquanController::class, 'index'])->name('admin-tongquan');
+Route::prefix('quanly')->name('admin.')->group(function () {
+    Route::prefix('tongquan')->name('tongquan.')->group(function () {
+        Route::get('/', [TongquanController::class, 'index'])->name('index');
     });
 
-    Route::prefix('quanlydonhang')->group(function () {
-        Route::get('/', [QuanlydonhangController::class, 'index'])->name('admin-quanlydonhang');
-        Route::get('/chitiet', [QuanlydonhangController::class, 'chitietdonhang'])->name('admin-chitietdonhang');
-        Route::post('/sua', [QuanlydonhangController::class, 'chinhsuadonhang'])->name('admin-chinhsuadonhang');
+    Route::prefix('quanlydonhang')->name('donhang.')->group(function () {
+        Route::get('/', [QuanlydonhangController::class, 'index'])->name('index');
+        Route::get('/chitiet', [QuanlydonhangController::class, 'chitietdonhang'])->name('chitiet');
+        Route::post('/sua', [QuanlydonhangController::class, 'chinhsuadonhang'])->name('chinhsua');
     });
 
-    Route::prefix('quanlybaiviet')->group(function () {
-        Route::get('/', [QuanlybaivietController::class, 'index'])->name('admin-quanlybaiviet');
-        Route::get('/chitiet', [QuanlybaivietController::class, 'chitietbaiviet'])->name('admin-chitietbaiviet');
-        Route::get('/them', [QuanlybaivietController::class, 'taobaiviet'])->name('admin-taobaiviet');
-        Route::post('/sua', [QuanlybaivietController::class, 'chinhsuabaiviet'])->name('admin-chinhsuabaiviet');
-        Route::post('/xoa', [QuanlybaivietController::class, 'xoabaiviet'])->name('admin-xoabaiviet');
+    Route::prefix('quanlybaiviet')->name('baiviet.')->group(function () {
+        Route::get('/', [QuanlybaivietController::class, 'index'])->name('index');
+        Route::get('/chitiet', [QuanlybaivietController::class, 'chitietbaiviet'])->name('chitietbaiviet');
+        Route::get('/them', [QuanlybaivietController::class, 'taobaiviet'])->name('them');
+        Route::post('/sua', [QuanlybaivietController::class, 'chinhsuabaiviet'])->name('chinhsua');
+        Route::post('/xoa', [QuanlybaivietController::class, 'xoabaiviet'])->name('xoa');
     });
 
-    Route::prefix('quanlytaikhoan')->group(function () {
-        Route::get('/', [QuanlytaikhoanController::class, 'index'])->name('admin-quanlytaikhoan');
-        Route::get('/them', [QuanlytaikhoanController::class, 'taotaikhoan'])->name('admin-taotaikhoan');
-        Route::post('/sua', [QuanlytaikhoanController::class, 'chinhsuataikhoan'])->name('admin-chinhsuataikhoan');
-        Route::get('/xoa', [QuanlytaikhoanController::class, 'xoataikhoan'])->name('admin-xoataikhoan');
+    Route::prefix('quanlytaikhoan')->name('taikhoan.')->group(function () {
+        Route::get('/', [QuanlytaikhoanController::class, 'index'])->name('index');
+        Route::get('/them', [QuanlytaikhoanController::class, 'taotaikhoan'])->name('them');
+        Route::post('/sua', [QuanlytaikhoanController::class, 'chinhsuataikhoan'])->name('chinhsua');
+        Route::get('/xoa', [QuanlytaikhoanController::class, 'xoataikhoan'])->name('xoa');
     });
 
-    Route::prefix('quanlydanhmuc')->group(function () {
-        Route::get('/', [QuanlydanhmucController::class, 'index'])->name('admin-quanlydanhmuc');
-        Route::get('/them', [QuanlydanhmucController::class, 'taodanhmuc'])->name('admin-taodanhmuc');
-        Route::get('/sua', [QuanlydanhmucController::class, 'chinhsuadanhmuc'])->name('admin-chinhsuadanhmuc');
-        Route::get('/xoa', [QuanlydanhmucController::class, 'xoadanhmuc'])->name('admin-xoadanhmuc');
+    Route::prefix('quanlydanhmuc')->name('danhmuc.')->group(function () {
+        Route::get('/', [QuanlydanhmucController::class, 'index'])->name('index');
+        Route::get('/them', [QuanlydanhmucController::class, 'taodanhmuc'])->name('them');
+        Route::get('/sua', [QuanlydanhmucController::class, 'chinhsuadanhmuc'])->name('chinhsua');
+        Route::get('/xoa', [QuanlydanhmucController::class, 'xoadanhmuc'])->name('xoa');
     });
 
-    Route::prefix('quanlylienhe')->group(function () {
-        Route::get('/', [QuanlylienheController::class, 'index'])->name('admin-quanlylienhe');
+    Route::prefix('quanlylienhe')->name('lienhe.')->group(function () {
+        Route::get('/', [QuanlylienheController::class, 'index'])->name('index');
     });
 
-    Route::prefix('danhsachmonan')->group(function () {
-        Route::get('/', [DanhsachmonanController::class, 'index'])->name('admin-danhsachmonan');
-        Route::get('/chitiet', [DanhsachmonanController::class, 'chitietmonan'])->name('admin-chitietmonan');
-        Route::get('/them', [DanhsachmonanController::class, 'taomonan'])->name('admin-taomonan');
-        Route::post('/sua', [DanhsachmonanController::class, 'chinhsuamonan'])->name('admin-chinhsuamonan');
-        Route::post('/xoa', [DanhsachmonanController::class, 'xoamonan'])->name('admin-xoamonan');
+    Route::prefix('danhsachmonan')->name('monan.')->group(function () {
+        Route::get('/', [DanhsachmonanController::class, 'index'])->name('index');
+        Route::get('/chitiet', [DanhsachmonanController::class, 'chitietmonan'])->name('chitiet');
+        Route::get('/them', [DanhsachmonanController::class, 'taomonan'])->name('them');
+        Route::post('/sua', [DanhsachmonanController::class, 'chinhsuamonan'])->name('chinhsua');
+        Route::post('/xoa', [DanhsachmonanController::class, 'xoamonan'])->name('xoa');
     });
 });
 
