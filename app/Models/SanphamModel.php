@@ -10,7 +10,7 @@ class SanphamModel extends Model
 {
     use HasFactory;
 
-    private $table = 'monan';
+    protected $table = 'monan';
 
     public function getAll() {
         $listsp = DB::table($this->table)->get();

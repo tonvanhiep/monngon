@@ -84,7 +84,7 @@ Route::get('/', [TrangchuController::class, 'index'])->name('trangchu');
 
 Route::get('/trangchu', [TrangchuController::class, 'index'])->name('Trangchu');
 
-Route::get('/sanpham', [SanphamController::class, 'index'])->name('sanpham');
+Route::get('/monan', [SanphamController::class, 'index'])->name('monan');
 
 Route::get('/lienhe', [LienheController::class, 'index'])->name('lienhe');
 Route::post('/lienhe', [LienheController::class, 'index'])->name('lienhe');
@@ -101,3 +101,11 @@ Route::post('/dangki', [DangkiController::class, 'index'])->name('dangki');
 Route::get('/giohang', [GiohangController::class, 'index'])->name('giohang');
 
 Route::get('/tintuc', [TintucController::class, 'index'])->name('tintuc');
+Route::get('/tintuc/{slug}-{id}', [TintucController::class, 'chitiettintuc'])
+    ->where(
+        [
+            'slug' => '.+',
+            'id' => '[0-9]+'
+        ]
+    )
+    ->name('tintuc.chitiet');

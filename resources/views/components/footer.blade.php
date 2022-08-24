@@ -11,7 +11,7 @@
                         <a href="{{route('trangchu')}}">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="{{route('sanpham')}}">Món ăn</a>
+                        <a href="{{route('monan')}}">Món ăn</a>
                     </li>
                     <li>
                         <a href="{{route('tintuc')}}">Tin tức</a>

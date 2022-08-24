@@ -9,6 +9,6 @@
         </div>
         </div>
     </div>
-    <img src="{{!isset($imgbanner)?'assets/images/banner-1.jpg':$imgbanner}}" alt="Banner" />
+    <img src="{{asset(!isset($imgbanner)?'assets/images/banner-1.jpg':$imgbanner)}}" alt="Banner" />
     </div>
 </div>

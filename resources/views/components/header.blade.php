@@ -7,7 +7,7 @@
             <div class="col-lg-8  center-header">
                 <ul class="navigation">
                     <li class="nav-item"><a href="{{route('trangchu')}}">Trang chủ</a></li>
-                    <li class="nav-item"><a href="{{route('sanpham')}}">Món ăn</a></li>
+                    <li class="nav-item"><a href="{{route('monan')}}">Món ăn</a></li>
                     <li class="nav-item"><a href="{{route('tintuc')}}">Tin tức</a></li>
                     <li class="nav-item"><a href="{{route('lienhe')}}">Liên hệ</a></li>
 
