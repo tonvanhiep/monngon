@@ -56,78 +56,17 @@
             </tr> 
             </thead> 
             <tbody>
-            <tr> 
-                <td data-th="ID"> #4737 </td>
-                <td data-th="Username"> tonvanhiep990 </td>
-                <td data-th="Name"> Tôn Văn Hiệp </td>
-                <td data-th="Subtotal" class="Tel"> 036.303.8485 </td> 
-                <td class="actions" data-th="Email"> tonvanhiepdragon@gmail.com </td>
-                <td class="actions" data-th="Address"> 362H, HDJSIK, JDJDI, TP.JDJK </td>
-                <td class="actions" data-th="Datetime"> 19:20:08 22/8/2022 </td>
-            </tr>
-            <tr> 
-                <td data-th="ID"> #4737 </td>
-                <td data-th="Username"> tonvanhiep990 </td>
-                <td data-th="Name"> Tôn Văn Hiệp </td>
-                <td data-th="Subtotal" class="Tel"> 036.303.8485 </td> 
-                <td class="actions" data-th="Email"> tonvanhiepdragon@gmail.com </td>
-                <td class="actions" data-th="Address"> 362H, HDJSIK, JDJDI, TP.JDJK </td>
-                <td class="actions" data-th="Datetime"> 19:20:08 22/8/2022 </td>
-            </tr>
-            <tr> 
-                <td data-th="ID"> #4737 </td>
-                <td data-th="Username"> tonvanhiep990 </td>
-                <td data-th="Name"> Tôn Văn Hiệp </td>
-                <td data-th="Subtotal" class="Tel"> 036.303.8485 </td> 
-                <td class="actions" data-th="Email"> tonvanhiepdragon@gmail.com </td>
-                <td class="actions" data-th="Address"> 362H, HDJSIK, JDJDI, TP.JDJK </td>
-                <td class="actions" data-th="Datetime"> 19:20:08 22/8/2022 </td>
-            </tr>
-            <tr> 
-                <td data-th="ID"> #4737 </td>
-                <td data-th="Username"> tonvanhiep990 </td>
-                <td data-th="Name"> Tôn Văn Hiệp </td>
-                <td data-th="Subtotal" class="Tel"> 036.303.8485 </td> 
-                <td class="actions" data-th="Email"> tonvanhiepdragon@gmail.com </td>
-                <td class="actions" data-th="Address"> 362H, HDJSIK, JDJDI, TP.JDJK </td>
-                <td class="actions" data-th="Datetime"> 19:20:08 22/8/2022 </td>
-            </tr>
-            <tr> 
-                <td data-th="ID"> #4737 </td>
-                <td data-th="Username"> tonvanhiep990 </td>
-                <td data-th="Name"> Tôn Văn Hiệp </td>
-                <td data-th="Subtotal" class="Tel"> 036.303.8485 </td> 
-                <td class="actions" data-th="Email"> tonvanhiepdragon@gmail.com </td>
-                <td class="actions" data-th="Address"> 362H, HDJSIK, JDJDI, TP.JDJK </td>
-                <td class="actions" data-th="Datetime"> 19:20:08 22/8/2022 </td>
-            </tr>
-            <tr> 
-                <td data-th="ID"> #4737 </td>
-                <td data-th="Username"> tonvanhiep990 </td>
-                <td data-th="Name"> Tôn Văn Hiệp </td>
-                <td data-th="Subtotal" class="Tel"> 036.303.8485 </td> 
-                <td class="actions" data-th="Email"> tonvanhiepdragon@gmail.com </td>
-                <td class="actions" data-th="Address"> 362H, HDJSIK, JDJDI, TP.JDJK </td>
-                <td class="actions" data-th="Datetime"> 19:20:08 22/8/2022 </td>
-            </tr>
-            <tr> 
-                <td data-th="ID"> #4737 </td>
-                <td data-th="Username"> tonvanhiep990 </td>
-                <td data-th="Name"> Tôn Văn Hiệp </td>
-                <td data-th="Subtotal" class="Tel"> 036.303.8485 </td> 
-                <td class="actions" data-th="Email"> tonvanhiepdragon@gmail.com </td>
-                <td class="actions" data-th="Address"> 362H, HDJSIK, JDJDI, TP.JDJK </td>
-                <td class="actions" data-th="Datetime"> 19:20:08 22/8/2022 </td>
-            </tr>
-            <tr> 
-                <td data-th="ID"> #4737 </td>
-                <td data-th="Username"> tonvanhiep990 </td>
-                <td data-th="Name"> Tôn Văn Hiệp </td>
-                <td data-th="Subtotal" class="Tel"> 036.303.8485 </td> 
-                <td class="actions" data-th="Email"> tonvanhiepdragon@gmail.com </td>
-                <td class="actions" data-th="Address"> 362H, HDJSIK, JDJDI, TP.JDJK </td>
-                <td class="actions" data-th="Datetime"> 19:20:08 22/8/2022 </td>
-            </tr>
+                @foreach ($listtaikhoan as $key => $item)
+                <tr> 
+                    <td data-th="ID"> #{{$item->id}} </td>
+                    <td data-th="Username"> ---------- </td>
+                    <td data-th="Name"> {{$item->hoten}} </td>
+                    <td data-th="Subtotal" class="Tel"> {{$item->sodienthoai}} </td> 
+                    <td class="actions" data-th="Email"> {{$item->email}} </td>
+                    <td class="actions" data-th="Address"> {{$item->diachi}} </td>
+                    <td class="actions" data-th="Datetime"> {{$item->ngaytao}} </td>
+                </tr>
+                @endforeach
             </tbody>
         </table>
         </div>

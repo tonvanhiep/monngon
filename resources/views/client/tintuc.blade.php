@@ -8,7 +8,6 @@
 @section('main')
     <main>
         @php
-            $imgbanner = 'assets/images/banner-1.jpg';
             $titlebanner = 'Tin tức';
         @endphp
         @include('components.banner')
@@ -23,7 +22,7 @@
                                     <div class="item-blog row">
                                         <div class="col-md-6">
                                             <div class="img-wrapper">
-                                                <img src="{{asset('assets/images/blogs/hinh-1.jpg')}}" alt="Blog" />
+                                                <img src="{{($item->anhdaidien == null)?asset('assets\images\logo\favicon.png'):$item->anhdaidien}}" alt="Blog" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -32,7 +31,7 @@
                                                 <p>{!!$item->noidung!!}</p>
                                             </div>
                                             <div class="cta-wrapper">
-                                                <a class="cta-primary" href="{{route('tintuc.chitiet', ['slug' => $item->tieude, 'id' => $item->id])}}">Xem thêm</a>
+                                                <a class="cta-primary" href="{{route('tintuc.chitiet', ['slug' => $item->slug, 'id' => $item->id])}}">Xem thêm</a>
                                             </div>
                                         </div>
                                     </div>

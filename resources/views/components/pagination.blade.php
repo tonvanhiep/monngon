@@ -1,21 +1,13 @@
-<div class="pagination-section">
-    <div class="container">
-        <ul class="pagination">
-            <li class="page-item active">
-                <a href="#">1</a>
-            </li>
-            <li class="page-item">
-                <a href="#">2</a>
-            </li>
-            <li class="page-item">
-                <a href="#">3</a>
-            </li>
-            <li class="page-item">
-                <a href="#">4</a>
-            </li>
-            <li class="page-item">
-                <a href="#">5</a>
-            </li>
-        </ul>
+@if (isset($currentpage) && isset($totalpage))
+    <div class="pagination-section">
+        <div class="container">
+            <ul class="pagination">
+                @for ($i = 1; $i <= $totalpage; $i++)
+                    <li class="page-item {{($i == $currentpage)?'active':''}}">
+                        <a href="#">{{$i}}</a>
+                    </li>
+                @endfor
+            </ul>
+        </div>
     </div>
-</div>
+@endif

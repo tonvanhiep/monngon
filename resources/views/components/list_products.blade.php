@@ -9,7 +9,7 @@
                             <div class="item-product">
                                 <a href="/detail-blog.html">
                                     <div class="img-wrapper">
-                                        <img src="{{asset('assets/images/products/hinh-2.jpg')}}" alt="Product" />
+                                        <img src="{{($item->anhdaidien == null)?asset('assets\images\logo\favicon.png'):$item->anhdaidien}}" alt="Product" />
                                     </div>
                                 </a>
                                 <div class="info-product">

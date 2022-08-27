@@ -10,8 +10,6 @@
         @php
         @endphp
 
-
-
         @include('components.banner')
 
         @include('components.list_products')

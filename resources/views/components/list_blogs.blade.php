@@ -12,15 +12,15 @@
                                         <div class="item-blog">
                                             <a href="/detail-blog.html">
                                                 <div class="img-wrapper">
-                                                    <img src="{{asset('assets/images/blogs/hinh-1.jpg')}}" alt="Blog" />
+                                                    <img src="{{($item->anhdaidien == null)?asset('assets\images\logo\favicon.png'):$item->anhdaidien}}" alt="Blog" />
                                                 </div>
                                             </a>
                                             <div class="name">{{$item->tieude}}</div>
                                             <div class="desc">
-                                                <p>{!!$item->noidung!!}</p>
+                                                <p>{{$item->noidung}}</p>
                                             </div>
                                             <div>
-                                                <a class="cta-primary" href="{{route('tintuc.chitiet', ['slug' => $item->tieude, 'id' => $item->id])}}">Xem thêm</a>
+                                                <a class="cta-primary" href="{{route('tintuc.chitiet', ['slug' => $item->slug, 'id' => $item->id])}}">Xem thêm</a>
                                             </div>
                                         </div>
                                     </div>
@@ -39,16 +39,16 @@
                                         <div class="item-blog row">
                                             <div class="col-md-6">
                                                 <div class="img-wrapper">
-                                                    <img src="{{asset('assets/images/blogs/hinh-1.jpg')}}" alt="Blog" />
+                                                    <img src="{{($item->anhdaidien == null)?asset('assets\images\logo\favicon.png'):$item->anhdaidien}}" alt="Blog" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="name">{{$item->tieude}}</div>
                                                 <div class="desc">
-                                                    <p>{!!$item->noidung!!}</p>
+                                                    <p>{{$item->noidung}}</p>
                                                 </div>
                                                 <div class="cta-wrapper">
-                                                <a class="cta-primary" href="{{route('tintuc.chitiet', ['slug' => $item->tieude, 'id' => $item->id])}}">Xem thêm</a>
+                                                <a class="cta-primary" href="{{route('tintuc.chitiet', ['slug' => $item->slug, 'id' => $item->id])}}">Xem thêm</a>
                                                 </div>
                                             </div>
                                         </div>

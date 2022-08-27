@@ -8,7 +8,6 @@
 @section('main')
     <main>
         @php
-            $imgbanner = 'assets/images/banner-1.jpg';
             $titlebanner = 'Liên hệ';
         @endphp
         @include('components.banner')
