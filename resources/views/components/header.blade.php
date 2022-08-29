@@ -11,8 +11,28 @@
                     <li class="nav-item"><a href="{{route('tintuc')}}">Tin tức</a></li>
                     <li class="nav-item"><a href="{{route('lienhe')}}">Liên hệ</a></li>
 
-                    <li class="nav-item"><a href="{{route('dangnhap')}}">Đăng nhập</a></li>
-                    <li class="nav-item"><a href="{{route('dangki')}}">Đăng kí</a></li>
+                    @if (session('loaitaikhoan') != null)
+                        @if (session('loaitaikhoan') == 'client')
+                            <li class="nav-item">
+                                <a href="{{route('dangnhap')}}">Tài khoản</a>
+                                <ul class="dropdown_menu">
+                                    <li> <a href="">QLTK</a> </li>
+                                    <li> <a href="{{route('dangxuat')}}">ĐX</a> </li>
+                                </ul>
+                            </li>
+                        @endif
+                        @if (session('loaitaikhoan') == 'admin')
+                            <li class="nav-item">
+                                <a href="{{route('admin.tongquan.index')}}">Quản lý</a>
+                                <ul class="dropdown_menu">
+                                    <li> <a href="{{route('dangxuat')}}">ĐX</a> </li>
+                                </ul>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item"><a href="{{route('dangnhap')}}">Đăng nhập</a></li>
+                        <li class="nav-item"><a href="{{route('dangki')}}">Đăng kí</a></li>
+                    @endif
                 </ul>
                 <div class="search-box">
                     <form class="search-inner" method="get" action="{{route('timkiem')}}">

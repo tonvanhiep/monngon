@@ -1,16 +1,15 @@
 @extends('client.layout-client')
 
 @section('title')
-    Tìm kiếm: ""
+    Tìm kiếm: "{{$keyword}}"
 @endsection
 
 
 @section('main')
     <main>
         @php
-            $imgbanner = 'assets/images/banner-1.jpg';
             $titlebanner = 'Từ khóa tìm kiếm:';
-            $subtitlebanner = 'Bún bò Huế';
+            $subtitlebanner = "\"".$keyword."\"";
         
             $title_listproducts = 'Kết quả tìm kiếm:';
         @endphp

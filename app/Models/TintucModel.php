@@ -17,8 +17,8 @@ class TintucModel extends Model
         return $listtintuc;
     }
 
-    public function getBlog($id) {
-        $chitiet = DB::table($this->table)->where('id', '=', $id)->get();
+    public function getBlog($id, $slug) {
+        $chitiet = DB::table($this->table)->where('id', '=', $id)->where('slug', '=', $slug)->get();
         return $chitiet;
     }
 }

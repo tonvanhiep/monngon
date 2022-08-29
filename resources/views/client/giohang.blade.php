@@ -130,7 +130,7 @@
                     <div class="option-cart">
                         <a href="index.html" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
 
-                        <a href="thanhtoan.html" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                        <a href="{{route('thanhtoan')}}" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>

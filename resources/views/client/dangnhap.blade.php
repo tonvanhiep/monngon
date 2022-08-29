@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
+    <title>Đăng nhập | Ẩm thực 3 miền, món ăn Việt Nam - Bắc, Trung, Nam | Món ngon</title>
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -26,16 +26,20 @@
                 <div class="title-login">Đăng nhập</div>
                 <p class="text-red h4 text-center"></p>
                 <form method="post" action="">
+                    {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="username">Tên đăng nhập *</label>
-                        <input id="username" class="form-control" name="username" required value="" />
+                        <label for="email">Email *</label>
+                        <input id="email" class="form-control" type="email" name="email" required value="" />
                     </div>
                     <div class="form-group">
                         <label for="password">Mật khẩu *</label>
                         <input id="password" type="password" class="form-control" name="password" required value="" />
                     </div>
-                    <div class="form-group text-right">
-                        <button class="btn btn-info" type="submit" name="login">Đăng nhập</button>
+                    <div class="form-group text-center pt-3">
+                        <button class="btn btn-outline-primary btn-block" type="submit" name="login">Đăng nhập</button>
+                    </div>
+                    <div class="text-center">
+                        <a class="text-center" href="{{route('dangki')}}">Đăng kí tài khoản</a>
                     </div>
                 </form>
             </div>

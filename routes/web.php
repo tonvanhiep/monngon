@@ -13,6 +13,7 @@ use App\Http\Controllers\GiohangController;
 use App\Http\Controllers\LienheController;
 use App\Http\Controllers\TrangchuController;
 use App\Http\Controllers\SanphamController;
+use App\Http\Controllers\ThanhtoanController;
 use App\Http\Controllers\TimkiemController;
 use App\Http\Controllers\TintucController;
 use Illuminate\Support\Facades\Route;
@@ -85,20 +86,31 @@ Route::get('/', [TrangchuController::class, 'index'])->name('trangchu');
 Route::get('/trangchu', [TrangchuController::class, 'index'])->name('Trangchu');
 
 Route::get('/monan', [SanphamController::class, 'index'])->name('monan');
+Route::get('/monan/{slug}-{id}', [SanphamController::class, 'chitietmonan'])
+    ->where(
+        [
+            'slug' => '.+',
+            'id' => '[0-9]+'
+        ]
+    )
+    ->name('monan.chitiet');
 
 Route::get('/lienhe', [LienheController::class, 'index'])->name('lienhe');
-Route::post('/lienhe', [LienheController::class, 'index'])->name('lienhe');
+Route::post('/lienhe', [LienheController::class, 'index'])->name('p-lienhe');
 
 Route::get('/timkiem', [TimkiemController::class, 'index'])->name('timkiem');
-Route::post('/timkiem', [TimkiemController::class, 'index'])->name('timkiem');
 
 Route::get('/dangnhap', [DangnhapController::class, 'index'])->name('dangnhap');
-Route::post('/dangnhap', [DangnhapController::class, 'index'])->name('dangnhap');
+Route::post('/dangnhap', [DangnhapController::class, 'dangnhap'])->name('p-dangnhap');
+Route::get('/dangxuat', [DangnhapController::class, 'dangxuat'])->name('dangxuat');
+
 
 Route::get('/dangki', [DangkiController::class, 'index'])->name('dangki');
-Route::post('/dangki', [DangkiController::class, 'index'])->name('dangki');
+Route::post('/dangki', [DangkiController::class, 'dangki'])->name('p-dangki');
 
 Route::get('/giohang', [GiohangController::class, 'index'])->name('giohang');
+
+Route::get('/thanhtoan', [ThanhtoanController::class, 'index'])->name('thanhtoan');
 
 Route::get('/tintuc', [TintucController::class, 'index'])->name('tintuc');
 Route::get('/tintuc/{slug}-{id}', [TintucController::class, 'chitiettintuc'])

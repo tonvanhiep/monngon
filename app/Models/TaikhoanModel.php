@@ -16,4 +16,23 @@ class TaikhoanModel extends Model
         $list = DB::table($this->table)->get();
         return $list;
     }
+
+    public function kiemtrataikhoan($email, $password) {
+        $ketqua = DB::table($this->table)->where('email', '=', $email)->where('matkhau', '=', $password)->get();
+        return $ketqua;
+    }
+
+    public function getRoleAccount($email, $password) {
+        $check = $this->kiemtrataikhoan($email, $password);
+        if(isset($check[0])) {
+            if($check[0]->admin == 1)
+                return 'admin';
+            else return 'client';
+        }
+        return 'chuadangnhap';
+    }
+
+    public function taotaikhoan($arr_info) {
+        
+    }
 }

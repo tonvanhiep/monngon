@@ -12,7 +12,16 @@
     <img src="{{asset(!isset($imgbanner)?'assets/images/banner-1.jpg':$imgbanner)}}" alt="Banner" />
     </div>
 </div> --}}
-
+<style>
+    .container-content-banner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0px;
+        z-index: 1;
+    }
+</style>
 <div class="home-slider single-banner">
     <div class="swiper home-swiper banner-wrapper">
         @if (isset($listbannerimg))
@@ -32,7 +41,7 @@
         @endif
         
         @if (isset($titlebanner) || isset($subtitlebanner))
-            <div class="container container-content-banner">
+            <div class="container-content-banner">
                 <div class="content-banner">
                     <h1 class="title-banner">{{!isset($titlebanner)?'Banner':$titlebanner}}</h1>
                     <div class="hr-line line-white"></div>

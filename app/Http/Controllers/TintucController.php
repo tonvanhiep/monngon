@@ -29,9 +29,11 @@ class TintucController extends Controller
 
     public function chitiettintuc($slug, $id) {
         $listbinhluan = '';
-        $chitiet = $this->tintuc->getBlog($id);
+        $chitiet = $this->tintuc->getBlog($id, $slug);
+        $listbannerimg = $this->banner->getBannerImg('tin_tuc');
         $this->data = [
-            'chitiet' => $chitiet
+            'chitiet' => $chitiet,
+            'listbannerimg' => $listbannerimg
         ];
         return view('client.chitiettintuc', $this->data);
     }

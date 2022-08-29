@@ -10,7 +10,7 @@
                                 @foreach ($listtintuc as $key => $item)
                                     <div class="col-4">
                                         <div class="item-blog">
-                                            <a href="/detail-blog.html">
+                                            <a href="{{route('tintuc.chitiet', ['slug' => $item->slug, 'id' => $item->id])}}">
                                                 <div class="img-wrapper">
                                                     <img src="{{($item->anhdaidien == null)?asset('assets\images\logo\favicon.png'):$item->anhdaidien}}" alt="Blog" />
                                                 </div>
@@ -38,9 +38,11 @@
                                     <div class="col-md-12">
                                         <div class="item-blog row">
                                             <div class="col-md-6">
-                                                <div class="img-wrapper">
-                                                    <img src="{{($item->anhdaidien == null)?asset('assets\images\logo\favicon.png'):$item->anhdaidien}}" alt="Blog" />
-                                                </div>
+                                                <a href="{{route('tintuc.chitiet', ['slug' => $item->slug, 'id' => $item->id])}}">
+                                                    <div class="img-wrapper">
+                                                        <img src="{{($item->anhdaidien == null)?asset('assets\images\logo\favicon.png'):$item->anhdaidien}}" alt="Blog" />
+                                                    </div>
+                                                </a>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="name">{{$item->tieude}}</div>

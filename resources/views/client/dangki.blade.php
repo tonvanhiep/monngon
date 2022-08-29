@@ -27,23 +27,30 @@
                 <p class="text-red h4 text-center"></p>
                 <form method="post" action="">
                     <div class="form-group">
-                        <label for="username">Tên đăng nhập</label>
+                        <label for="username">Tên đăng nhập *</label>
                         <input id="username" class="form-control" name="username" required value="" />
                     </div>
                     <div class="form-group">
-                        <label for="password">Mật khẩu</label>
+                        <label for="password">Mật khẩu *</label>
                         <input id="password" type="password" class="form-control" name="password" required value="" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input id="email" class="form-control" name="email" required value="" />
+                        <label for="re-password">Nhập lại mật khẩu *</label>
+                        <input id="re-password" type="password" class="form-control" name="password" required value="" />
                     </div>
                     <div class="form-group">
-                        <label for="phone">Số điện thoại</label>
+                        <label for="email">Email *</label>
+                        <input id="email" class="form-control" type="email" name="email" required value="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại *</label>
                         <input id="phone" class="form-control" name="phone" required value="" />
                     </div>
-                    <div class="form-group text-right">
-                        <button class="btn btn-info" type="submit" name="register">Đăng ký</button>
+                    <div class="form-group text-center pt-3">
+                        <button class="btn btn-outline-primary btn-block" type="submit" name="login">Đăng kí tài khoản</button>
+                    </div>
+                    <div class="text-center">
+                        <a class="text-center" href="{{route('dangnhap')}}">Đăng nhập</a>
                     </div>
                 </form>
             </div>

@@ -32,4 +32,12 @@ class SanphamController extends Controller
         ];
         return view('client.sanpham', $this->data);
     }
+
+    public function chitietmonan($slug, $id) {
+        $chitiet = $this->sanpham->getProduct($slug, $id);
+        $this->data = [
+            'chitiet' => $chitiet
+        ];
+        return view('client.chitietmonan', $this->data);
+    }
 }
