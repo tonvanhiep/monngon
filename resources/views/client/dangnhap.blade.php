@@ -39,7 +39,7 @@
                         <button class="btn btn-outline-primary btn-block" type="submit" name="login">Đăng nhập</button>
                     </div>
                     <div class="text-center">
-                        <a class="text-center" href="{{route('dangki')}}">Đăng kí tài khoản</a>
+                        <a class="text-center" href="{{route('taikhoan.dangki')}}">Đăng kí tài khoản</a>
                     </div>
                 </form>
             </div>

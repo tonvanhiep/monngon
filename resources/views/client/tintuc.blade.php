@@ -28,7 +28,7 @@
                                         <div class="col-md-6">
                                             <div class="name">{{$item->tieude}}</div>
                                             <div class="desc">
-                                                <p>{!!$item->noidung!!}</p>
+                                                <p>{{$item->noidung}}</p>
                                             </div>
                                             <div class="cta-wrapper">
                                                 <a class="cta-primary" href="{{route('tintuc.chitiet', ['slug' => $item->slug, 'id' => $item->id])}}">Xem thêm</a>

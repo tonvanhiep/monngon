@@ -28,4 +28,10 @@ class SanphamModel extends Model
         $listsp = DB::table($this->table)->where('tenmonan','like', $tenmonan)->get();
         return $listsp;
     }
+
+    public function getTuychon($idmonan) {
+        // $listsp = DB::select('SELECT * FROM monan WHERE tenmonan like "%?%"', [$tenmonan]);
+        $listsp = DB::table($this->table)->join('tuychonmon', 'monan.id', '=', 'tuychonmon.id_monan')->where('tuychonmon.id_monan', '=', $idmonan)->get();
+        return $listsp;
+    }
 }

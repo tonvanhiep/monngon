@@ -7,17 +7,34 @@
             <div class="col-lg-8  center-header">
                 <ul class="navigation">
                     <li class="nav-item"><a href="{{route('trangchu')}}">Trang chủ</a></li>
-                    <li class="nav-item"><a href="{{route('monan')}}">Món ăn</a></li>
+                    <li class="nav-item">
+                        <a href="{{route('monan')}}">Món ăn</a>
+                        <ul class="dropdown_menu" class="shadow-sm p-3 mb-5 bg-body rounded">
+                            @isset($listdanhmuc)
+                                @foreach ($listdanhmuc as $key=>$item)
+                                    <li> <a href="{{route('danhmuc', [$listdanhmuc->slug])}}">{{$item->tendanhmuc}}</a> </li>
+                                @endforeach
+                            @endisset
+                            <li> <a href="">Món ăn 1</a> </li>
+                            <li> <a href="">Món ăn 2</a> </li>
+                            <li> <a href="">Món ăn 3</a> </li>
+                            <li> <a href="">Món ăn 4</a> </li>
+                            <li> <a href="">Món ăn 5</a> </li>
+                            <li> <a href="">Món ăn 6</a> </li>
+                            <li> <a href="">Món ăn 7</a> </li>
+                            <li> <a href="">Món ăn 8</a> </li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a href="{{route('tintuc')}}">Tin tức</a></li>
                     <li class="nav-item"><a href="{{route('lienhe')}}">Liên hệ</a></li>
 
                     @if (session('loaitaikhoan') != null)
                         @if (session('loaitaikhoan') == 'client')
                             <li class="nav-item">
-                                <a href="{{route('dangnhap')}}">Tài khoản</a>
-                                <ul class="dropdown_menu">
+                                <a href="{{route('taikhoan.dangnhap')}}">Tài khoản</a>
+                                <ul class="dropdown_menu" class="shadow-sm p-3 mb-5 bg-body rounded">
                                     <li> <a href="">QLTK</a> </li>
-                                    <li> <a href="{{route('dangxuat')}}">ĐX</a> </li>
+                                    <li> <a href="{{route('taikhoan.dangxuat')}}">ĐX</a> </li>
                                 </ul>
                             </li>
                         @endif
@@ -25,13 +42,13 @@
                             <li class="nav-item">
                                 <a href="{{route('admin.tongquan.index')}}">Quản lý</a>
                                 <ul class="dropdown_menu">
-                                    <li> <a href="{{route('dangxuat')}}">ĐX</a> </li>
+                                    <li> <a href="{{route('taikhoan.dangxuat')}}">ĐX</a> </li>
                                 </ul>
                             </li>
                         @endif
                     @else
-                        <li class="nav-item"><a href="{{route('dangnhap')}}">Đăng nhập</a></li>
-                        <li class="nav-item"><a href="{{route('dangki')}}">Đăng kí</a></li>
+                        <li class="nav-item"><a href="{{route('taikhoan.dangnhap')}}">Đăng nhập</a></li>
+                        <li class="nav-item"><a href="{{route('taikhoan.dangki')}}">Đăng kí</a></li>
                     @endif
                 </ul>
                 <div class="search-box">

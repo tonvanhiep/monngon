@@ -117,3 +117,32 @@ header {
   text-decoration: none;
 }
 /*  End Navigation  */
+
+
+.navigation > li {
+  position: relative;
+}
+
+.navigation > li > ul.dropdown_menu {
+  position: absolute;
+  display: none;
+  top: 40px;
+  background-color: white;
+  text-align: left;
+}
+.dropdown_menu a:hover{
+  background-color:aqua;
+}
+.dropdown_menu a{
+  width: 100%;
+}
+.dropdown_menu li{
+  width: 100%;
+  margin: 0px;
+  min-width: 80px;
+}
+.navigation > li:hover > ul.dropdown_menu {
+  z-index: 100;
+  display: block;
+  padding: 0px;
+}

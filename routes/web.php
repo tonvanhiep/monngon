@@ -77,6 +77,17 @@ Route::prefix('quanly')->name('admin.')->group(function () {
     });
 });
 
+Route::prefix('taikhoan')->name('taikhoan.')->group(function () {
+    Route::get('/dangnhap', [DangnhapController::class, 'index'])->name('dangnhap');
+    Route::post('/dangnhap', [DangnhapController::class, 'dangnhap'])->name('p-dangnhap');
+
+    Route::get('/dangxuat', [DangnhapController::class, 'dangxuat'])->name('dangxuat');
+
+
+    Route::get('/dangki', [DangkiController::class, 'index'])->name('dangki');
+    Route::post('/dangki', [DangkiController::class, 'dangki'])->name('p-dangki');
+});
+
 
 
 
@@ -86,6 +97,7 @@ Route::get('/', [TrangchuController::class, 'index'])->name('trangchu');
 Route::get('/trangchu', [TrangchuController::class, 'index'])->name('Trangchu');
 
 Route::get('/monan', [SanphamController::class, 'index'])->name('monan');
+
 Route::get('/monan/{slug}-{id}', [SanphamController::class, 'chitietmonan'])
     ->where(
         [
@@ -100,14 +112,6 @@ Route::post('/lienhe', [LienheController::class, 'index'])->name('p-lienhe');
 
 Route::get('/timkiem', [TimkiemController::class, 'index'])->name('timkiem');
 
-Route::get('/dangnhap', [DangnhapController::class, 'index'])->name('dangnhap');
-Route::post('/dangnhap', [DangnhapController::class, 'dangnhap'])->name('p-dangnhap');
-Route::get('/dangxuat', [DangnhapController::class, 'dangxuat'])->name('dangxuat');
-
-
-Route::get('/dangki', [DangkiController::class, 'index'])->name('dangki');
-Route::post('/dangki', [DangkiController::class, 'dangki'])->name('p-dangki');
-
 Route::get('/giohang', [GiohangController::class, 'index'])->name('giohang');
 
 Route::get('/thanhtoan', [ThanhtoanController::class, 'index'])->name('thanhtoan');
@@ -121,3 +125,11 @@ Route::get('/tintuc/{slug}-{id}', [TintucController::class, 'chitiettintuc'])
         ]
     )
     ->name('tintuc.chitiet');
+
+Route::get('/{slug}', [SanphamController::class, 'danhmuc'])
+    ->where(
+        [
+            'slug' => '.+'
+        ]
+    )
+    ->name('danhmuc');
