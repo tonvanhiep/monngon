@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BannerModel;
+use App\Models\LienheModel;
 use Illuminate\Http\Request;
 
 class LienheController extends Controller
@@ -21,5 +22,18 @@ class LienheController extends Controller
             'listbannerimg' => $listbannerimg
         ];
         return view('client.lienhe', $this->data);
+    }
+
+    public function luulienhe(Request $request) {
+        // dd($request);
+        $datalh = [
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'content' => $request->content,
+            'hoten' => $request->name
+        ];
+        $lienhe = new LienheModel();
+        $lienhe->luulienhe($datalh);
+        return redirect()->route('lienhe');
     }
 }

@@ -32,7 +32,31 @@ class TaikhoanModel extends Model
         return 'chuadangnhap';
     }
 
-    public function taotaikhoan($arr_info) {
-        
+    public function taotaikhoan($data) {
+        DB::table($this->table)->insert([
+            [
+                'hoten' => $data['username'],
+                'email' => $data['email'],
+                'sodienthoai' => $data['phone'],
+                'matkhau' => md5($data['password']),
+                'ngaytao' => date("y:m:d H:i:s"),
+                'ngaycapnhat' => date("y:m:d H:i:s"),
+                'admin' => 0
+            ]
+        ]);
+    }
+
+    public function taotaikhoanadmin($data) {
+        DB::table($this->table)->insert([
+            [
+                'hoten' => $data['username'],
+                'email' => $data['email'],
+                'sodienthoai' => $data['phone'],
+                'matkhau' => md5($data['password']),
+                'ngaytao' => date("y:m:d H:i:s"),
+                'ngaycapnhat' => date("y:m:d H:i:s"),
+                'admin' => 1
+            ]
+        ]);
     }
 }

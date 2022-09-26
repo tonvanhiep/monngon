@@ -17,6 +17,7 @@
     <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="{{asset('assets/js/script.js')}}"></script>
+    <script src="{{asset('assets/js/md5.js')}}"></script>
     <link rel="icon" type="image/jpg" href="{{asset('assets/images/logo/favicon.png')}}">
 </head>
 <body>
@@ -25,7 +26,8 @@
             <div class="login-inner">
                 <div class="title-login">Đăng kí tài khoản</div>
                 <p class="text-red h4 text-center"></p>
-                <form method="post" action="">
+                <form method="post" action="" id="form-register">
+                    @csrf
                     <div class="form-group">
                         <label for="username">Tên đăng nhập *</label>
                         <input id="username" class="form-control" name="username" required value="" />
@@ -36,7 +38,7 @@
                     </div>
                     <div class="form-group">
                         <label for="re-password">Nhập lại mật khẩu *</label>
-                        <input id="re-password" type="password" class="form-control" name="password" required value="" />
+                        <input id="re-password" type="password" class="form-control" name="re-password" required value="" />
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
@@ -49,12 +51,32 @@
                     <div class="form-group text-center pt-3">
                         <button class="btn btn-outline-primary btn-block" type="submit" name="login">Đăng kí tài khoản</button>
                     </div>
+
+                    @php
+                        if(session('message')) {
+                            echo "<div class=\"alert alert-success text-center\" id=\"alert-cart-sucess\">
+                                    <strong>".session('message')."</strong>
+                                </div>";
+                        }
+                    @endphp
+
                     <div class="text-center">
-                        <a class="text-center" href="{{route('taikhoan.dangnhap')}}">Đăng nhập</a>
+                        Đã có tài khoản? <a class="text-center" href="{{route('taikhoan.dangnhap')}}">Đăng nhập</a>
                     </div>
                 </form>
             </div>
         </div>
     </main>
+
+    <script>
+        let pass = document.getElementById('password');
+        let re_pass = document.getElementById('re-password');
+        document.getElementById('form-register').onsubmit = function() {
+            pass.value = md5(pass.value);
+            re_pass.value = md5(re_pass.value);
+            alert(pass.value);
+            alert(re_pass.value);
+        }
+    </script>
 </body>
 </html>

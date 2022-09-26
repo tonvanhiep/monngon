@@ -13,6 +13,7 @@ use App\Http\Controllers\GiohangController;
 use App\Http\Controllers\LienheController;
 use App\Http\Controllers\TrangchuController;
 use App\Http\Controllers\SanphamController;
+use App\Http\Controllers\TaikhoanController;
 use App\Http\Controllers\ThanhtoanController;
 use App\Http\Controllers\TimkiemController;
 use App\Http\Controllers\TintucController;
@@ -78,14 +79,14 @@ Route::prefix('quanly')->name('admin.')->group(function () {
 });
 
 Route::prefix('taikhoan')->name('taikhoan.')->group(function () {
-    Route::get('/dangnhap', [DangnhapController::class, 'index'])->name('dangnhap');
-    Route::post('/dangnhap', [DangnhapController::class, 'dangnhap'])->name('p-dangnhap');
+    Route::get('/dangnhap', [TaikhoanController::class, 'viewdangnhap'])->name('dangnhap');
+    Route::post('/dangnhap', [TaikhoanController::class, 'xulydangnhap'])->name('p-dangnhap');
 
-    Route::get('/dangxuat', [DangnhapController::class, 'dangxuat'])->name('dangxuat');
+    Route::get('/dangxuat', [TaikhoanController::class, 'dangxuat'])->name('dangxuat');
 
 
-    Route::get('/dangki', [DangkiController::class, 'index'])->name('dangki');
-    Route::post('/dangki', [DangkiController::class, 'dangki'])->name('p-dangki');
+    Route::get('/dangki', [TaikhoanController::class, 'viewdangky'])->name('dangki');
+    Route::post('/dangki', [TaikhoanController::class, 'xulydangky'])->name('p-dangki');
 });
 
 
@@ -108,13 +109,16 @@ Route::get('/monan/{slug}-{id}', [SanphamController::class, 'chitietmonan'])
     ->name('monan.chitiet');
 
 Route::get('/lienhe', [LienheController::class, 'index'])->name('lienhe');
-Route::post('/lienhe', [LienheController::class, 'index'])->name('p-lienhe');
+Route::post('/lienhe', [LienheController::class, 'luulienhe'])->name('lienhe');
 
 Route::get('/timkiem', [TimkiemController::class, 'index'])->name('timkiem');
 
 Route::get('/giohang', [GiohangController::class, 'index'])->name('giohang');
 
 Route::get('/thanhtoan', [ThanhtoanController::class, 'index'])->name('thanhtoan');
+Route::post('/thanhtoan', [ThanhtoanController::class, 'xulydonhang'])->name('thanhtoan');
+
+Route::get('/camonquykhach', [ThanhtoanController::class, 'camonquykhach'])->name('camonquykhach');
 
 Route::get('/tintuc', [TintucController::class, 'index'])->name('tintuc');
 Route::get('/tintuc/{slug}-{id}', [TintucController::class, 'chitiettintuc'])
@@ -133,3 +137,5 @@ Route::get('/{slug}', [SanphamController::class, 'danhmuc'])
         ]
     )
     ->name('danhmuc');
+
+

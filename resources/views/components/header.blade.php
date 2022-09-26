@@ -60,7 +60,7 @@
             </div>
             <div class="col-lg-2 right-header">
                 <div class="cart">
-                    <div class="total-items">9</div>
+                    <div class="total-items" id="total-items" style="display: none;">0</div>
                 </div>
                 <a class="a-cart" href="{{route('giohang')}}">Giỏ hàng</a>                
             </div>

@@ -17,6 +17,7 @@
     <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="{{asset('assets/js/script.js')}}"></script>
+    <script src="{{asset('assets/js/md5.js')}}"></script>
     <link rel="icon" type="image/jpg" href="{{asset('assets/images/logo/favicon.png')}}">
 </head>
 <body>
@@ -25,7 +26,7 @@
             <div class="login-inner">
                 <div class="title-login">Đăng nhập</div>
                 <p class="text-red h4 text-center"></p>
-                <form method="post" action="">
+                <form method="post" action="" id="form-login">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="email">Email *</label>
@@ -38,12 +39,27 @@
                     <div class="form-group text-center pt-3">
                         <button class="btn btn-outline-primary btn-block" type="submit" name="login">Đăng nhập</button>
                     </div>
+
+                    @php
+                        if(session('message')) {
+                            echo "<div class=\"alert alert-success text-center\" id=\"alert-cart-sucess\">
+                                    <strong>".session('message')."</strong>
+                                </div>";
+                        }
+                    @endphp
+                    
                     <div class="text-center">
-                        <a class="text-center" href="{{route('taikhoan.dangki')}}">Đăng kí tài khoản</a>
+                        Bạn chưa có tài khoản? <a class="text-center" href="{{route('taikhoan.dangki')}}">Đăng kí</a>
                     </div>
                 </form>
             </div>
         </div>
     </main>
+    <script>
+        let pass = document.getElementById('password');
+        document.getElementById('form-login').onsubmit = function() {
+            pass.value = md5(pass.value);
+        }
+    </script>
 </body>
 </html>

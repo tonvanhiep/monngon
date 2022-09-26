@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,7 @@
 
     <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src="{{asset('assets/js/script.js')}}"></script>
+    {{-- <script src="{{asset('assets/js/script.js')}}"></script> --}}
     <link rel="icon" type="image/jpg" href="{{asset('assets/images/logo/favicon.png')}}">
 
     @yield('css')
@@ -35,7 +36,7 @@
     @include('components.footer')
     
 
-
+    <script src="{{asset('assets/js/script.js')}}"></script>
     @yield('js')
 </body>
 </html>

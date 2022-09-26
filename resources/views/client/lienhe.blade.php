@@ -15,21 +15,28 @@
         <div class="container">
             <div class="contact-us row pt-40 pb-40">
                 <div class="col-md-5">
-                    <form method="post" action="">
+                    <div class="alert text-center" id="alert-contact" style="display: none;"><strong>Đã gửi thành công!!!</strong></div>
+
+                    <form method="post" action="#">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name">Họ và tên <span class="text-danger">*</span></label>
+                            <input id="name" class="form-control" name="name" type="text" required/>
+                        </div>
                         <div class="form-group">
                             <label for="email">Email <span class="text-danger">*</span></label>
-                            <input id="email" class="form-control" name="email" required value="" />
+                            <input id="email" class="form-control" name="email" type="email" required/>
                         </div>
                         <div class="form-group">
                             <label for="phone">Số điện thoại</label>
-                            <input id="phone" class="form-control" name="phone" value="" />
+                            <input id="phone" class="form-control" name="phone" required type="tel"/>
                         </div>
                         <div class="form-group">
                             <label for="content">Nội dung</label>
-                            <textarea class="form-control" name="content" rows="4"></textarea>
+                            <textarea class="form-control" name="content" rows="3"></textarea>
                         </div>
                         <div class="form-group text-right">
-                            <button class="btn btn-info" type="submit" name="sendContact">Gửi</button>
+                            <button class="btn btn-info btn-lg btn-block" type="submit" name="sendContact">Gửi</button>
                         </div>
                         <p class="text-danger text-center"></p>
                     </form>

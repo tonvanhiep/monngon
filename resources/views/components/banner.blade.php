@@ -46,7 +46,7 @@
                     <h1 class="title-banner">{{!isset($titlebanner)?'Banner':$titlebanner}}</h1>
                     <div class="hr-line line-white"></div>
                     <div class="desc">
-                        {{!isset($subtitlebanner)?'':$subtitlebanner}}
+                        {!!!isset($subtitlebanner)?'':$subtitlebanner!!}
                     </div>
                 </div>
             </div>
